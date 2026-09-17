@@ -1,0 +1,8 @@
+# Local preview server only. If Vercel sees this it deploys it as a serverless
+# function and every request 404s, because __dirname does not resolve to the
+# project files there. The site is plain static: Vercel should just serve it.
+server.js
+
+# Working notes, not part of the site
+CHANGES-v6.md
+_reference/
