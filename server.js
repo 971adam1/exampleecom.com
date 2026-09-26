@@ -16,6 +16,7 @@ const TYPES = {
   '.jpeg': 'image/jpeg',
   '.png': 'image/png',
   '.webp': 'image/webp',
+  '.woff2': 'font/woff2',
   '.ico': 'image/x-icon',
   '.json': 'application/json',
   '.txt': 'text/plain; charset=utf-8',

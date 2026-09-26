@@ -1,4 +1,4 @@
-/* Example Electronics v4. Official product imagery. Showcase build, no backend. */
+/* Example Electronics v7. Official product imagery. Showcase build, no backend. */
 (function () {
 'use strict';
 var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -17,83 +17,89 @@ var RULES = {
 
 /* colors: [display name, swatch hex, image slug] */
 var P = [
-  { id:'ip16p', brand:'Apple', name:'iPhone 16 Pro', price:2649, was:4199, stock:6, tags:['new'],
+  { id:'ip16p', brand:'Apple', name:'iPhone 16 Pro', price:3149, was:4299, stock:6, tags:['new'],
     storage:['128 GB','256 GB','512 GB'],
     colors:[['Desert Titanium','#C4A98C','deserttitanium'],['Black Titanium','#4A4A4C','blacktitanium'],
             ['White Titanium','#E6E4DF','whitetitanium','webp'],['Natural Titanium','#B5AFA4','naturaltitanium']] },
-  { id:'ip16', brand:'Apple', name:'iPhone 16', price:2249, was:3399, stock:10, tags:['new'],
+  { id:'ip16', brand:'Apple', name:'iPhone 16', price:2549, was:3399, stock:10, tags:['new'],
     storage:['128 GB','256 GB'],
     colors:[['Ultramarine','#8FA4D8','ultramarine'],['Teal','#B4CBC6','teal'],['Pink','#F2D9DE','pink'],
             ['Black','#3B3B3D','black'],['White','#F2F2F0','white']] },
-  { id:'ip15pm', brand:'Apple', name:'iPhone 15 Pro Max', price:2329, was:5099, stock:4, tags:['save'],
+  { id:'ip15pm', brand:'Apple', name:'iPhone 15 Pro Max', price:2949, was:5099, stock:4, tags:['save'],
     storage:['256 GB','512 GB','1 TB'],
     colors:[['Natural Titanium','#B5AFA4','naturaltitanium'],['Blue Titanium','#5A6B7E','bluetitanium'],
             ['White Titanium','#E6E4DF','whitetitanium'],['Black Titanium','#4A4A4C','blacktitanium']] },
-  { id:'ip15p', brand:'Apple', name:'iPhone 15 Pro', price:2039, was:4299, stock:7, tags:['save'],
+  { id:'ip15p', brand:'Apple', name:'iPhone 15 Pro', price:2449, was:4299, stock:7, tags:['save'],
     storage:['128 GB','256 GB','512 GB'],
     colors:[['Black Titanium','#4A4A4C','blacktitanium'],['White Titanium','#E6E4DF','whitetitanium'],
             ['Blue Titanium','#5A6B7E','bluetitanium'],['Natural Titanium','#B5AFA4','naturaltitanium']] },
-  { id:'ip15', brand:'Apple', name:'iPhone 15', price:1609, was:3099, stock:12, tags:['save'],
+  { id:'ip15', brand:'Apple', name:'iPhone 15', price:1949, was:3399, stock:12, tags:['save'],
     storage:['128 GB','256 GB'],
     colors:[['Pink','#F0D3D8','pink'],['Yellow','#EFE7C4','yellow'],['Green','#CDD5C6','green'],['Blue','#C9D6DC','blue']] },
-  { id:'ip14pm', brand:'Apple', name:'iPhone 14 Pro Max', price:1839, was:4699, stock:3, tags:['save','low'],
+  { id:'ip14pm', brand:'Apple', name:'iPhone 14 Pro Max', price:2249, was:4699, stock:3, tags:['save','low'],
     storage:['128 GB','256 GB','512 GB'],
     colors:[['Space Black','#3A3A3C','spaceblack'],['Gold','#E3CDA6','gold'],
             ['Deep Purple','#5C5670','deeppurple'],['Silver','#E4E4E2','silver']] },
-  { id:'ip14p', brand:'Apple', name:'iPhone 14 Pro', price:1569, was:4399, stock:9, tags:['save'],
+  { id:'ip14p', brand:'Apple', name:'iPhone 14 Pro', price:1899, was:4199, stock:9, tags:['save'],
     storage:['128 GB','256 GB'],
     colors:[['Space Black','#3A3A3C','spaceblack'],['Silver','#E4E4E2','silver'],
             ['Deep Purple','#5C5670','deeppurple'],['Gold','#E3CDA6','gold']] },
-  { id:'ip13pm', brand:'Apple', name:'iPhone 13 Pro Max', price:1459, was:3199, stock:6, tags:['save'],
+  { id:'ip13pm', brand:'Apple', name:'iPhone 13 Pro Max', price:1749, was:4699, stock:6, tags:['save'],
     storage:['128 GB','256 GB','512 GB'],
     colors:[['Graphite','#54524F','graphite'],['Gold','#E5CFB0','gold'],['Silver','#E8E8E6','silver'],
             ['Alpine Green','#576259','alpinegreen'],['Sierra Blue','#9CB4CC','sierrablue']] },
-  { id:'ip13', brand:'Apple', name:'iPhone 13', price:979, was:2899, stock:15, tags:['save'],
+  { id:'ip13', brand:'Apple', name:'iPhone 13', price:1249, was:3399, stock:15, tags:['save'],
     storage:['128 GB','256 GB'],
     colors:[['Midnight','#31363E','midnight'],['Starlight','#EEE9E2','starlight'],['Pink','#F6DDD9','pink'],
             ['Blue','#4E6C8F','blue'],['Red','#B8323C','red']] },
-  { id:'ip12pm', brand:'Apple', name:'iPhone 12 Pro Max', price:1209, was:2899, stock:4, tags:['save','low'],
+  { id:'ip12pm', brand:'Apple', name:'iPhone 12 Pro Max', price:1349, was:4699, stock:4, tags:['save','low'],
     storage:['128 GB','256 GB'],
     colors:[['Graphite','#54524F','graphite'],['Pacific Blue','#2D4F63','pacificblue'],
             ['Gold','#E5CFB0','gold'],['Silver','#E8E8E6','silver']] },
-  { id:'ip12', brand:'Apple', name:'iPhone 12', price:669, was:2199, stock:18, tags:['save'],
+  { id:'ip12', brand:'Apple', name:'iPhone 12', price:899, was:3299, stock:18, tags:['save'],
     storage:['64 GB','128 GB'],
     colors:[['Black','#2B2C2E','black'],['White','#F2F2F0','white'],['Blue','#2F4E68','blue'],
             ['Green','#B6D8C8','green'],['Purple','#C4B5DC','purple'],['Red','#C6353B','red']] },
-  { id:'ip11', brand:'Apple', name:'iPhone 11', price:519, was:1899, stock:22, tags:['save'],
+  { id:'ip11', brand:'Apple', name:'iPhone 11', price:699, was:2699, stock:22, tags:['save'],
     storage:['64 GB','128 GB'],
     colors:[['Black','#2B2C2E','black'],['White','#F2F2F0','white'],['Purple','#D5CEE4','purple'],
             ['Green','#C9E0D2','green'],['Yellow','#F2E3AA','yellow'],['Red','#C6353B','red']] },
-  { id:'s24', brand:'Samsung', name:'Galaxy S24', price:1449, was:2799, stock:7, tags:['save'],
+  { id:'s24', brand:'Samsung', name:'Galaxy S24', price:1649, was:3399, stock:7, tags:['save'],
     storage:['128 GB','256 GB'],
     colors:[['Onyx Black','#2E2E30','onyxblack'],['Marble Gray','#B9B9BA','marblegray'],
             ['Cobalt Violet','#B0A6C9','cobaltviolet'],['Amber Yellow','#E8D9A8','amberyellow']] },
-  { id:'s23u', brand:'Samsung', name:'Galaxy S23 Ultra', price:1629, was:3149, stock:5, tags:['save'],
+  { id:'s23u', brand:'Samsung', name:'Galaxy S23 Ultra', price:1849, was:4699, stock:5, tags:['save'],
     storage:['256 GB','512 GB'],
     colors:[['Green','#4A5A4C','green'],['Cream','#E2DACB','cream'],
             ['Lavender','#CFC7DA','lavender'],['Phantom Black','#2E2E30','phantomblack']] },
-  { id:'s22u', brand:'Samsung', name:'Galaxy S22 Ultra', price:1199, was:2649, stock:8, tags:['save'],
+  { id:'s22u', brand:'Samsung', name:'Galaxy S22 Ultra', price:1349, was:4599, stock:8, tags:['save'],
     storage:['128 GB','256 GB'],
     colors:[['Phantom Black','#2E2E30','phantomblack'],['Green','#3F5145','green'],
             ['Burgundy','#6A2A38','burgundy'],['Phantom White','#EDEDEB','phantomwhite']] },
-  { id:'s21u', brand:'Samsung', name:'Galaxy S21 Ultra', price:949, was:2299, stock:11, tags:['save'],
+  { id:'s21u', brand:'Samsung', name:'Galaxy S21 Ultra', price:1049, was:4299, stock:11, tags:['save'],
     storage:['128 GB','256 GB'],
     colors:[['Phantom Black','#2E2E30','phantomblack'],['Phantom Silver','#D8D9DB','phantomsilver']] }
 ];
 
-var CONDS = [
-  { k:'C', n:'Good', d:'Visible scratches, works perfectly', m:1 },
-  { k:'B', n:'Very good', d:'Light marks, hard to spot', m:1.048 },
-  { k:'A', n:'Excellent', d:'Like new, no visible wear', m:1.075 }
-];
+function conds() {
+  return [
+    { k:'C', n:t('gr.c'), d:t('gr.cTxt2'), m:1 },
+    { k:'B', n:t('gr.b'), d:t('gr.bTxt2'), m:1.048 },
+    { k:'A', n:t('gr.a'), d:t('gr.aTxt2'), m:1.075 }
+  ];
+}
+var CONDS = conds();
 
-var BUNDLES = [
-  { id:'case',  name:'Protective case',       solo:79,  bundle:39,  img:'acc/case.webp' },
-  { id:'glass', name:'Tempered screen guard', solo:59,  bundle:25,  img:'acc/glass.webp' },
-  { id:'chg',   name:'20W fast charger',      solo:119, bundle:69,  img:'acc/charger.webp' },
-  { id:'buds',  name:'Wireless earbuds',      solo:249, bundle:169, img:'acc/buds.jpg' },
-  { id:'bank',  name:'10000mAh power bank',   solo:159, bundle:99,  img:'acc/bank.jpg' }
+function bundles() {
+  return [
+  { id:'case',  name:t('acc.case'),  solo:79,  bundle:39,  img:'acc/case.webp' },
+  { id:'glass', name:t('acc.glass'), solo:59,  bundle:25,  img:'acc/glass.webp' },
+  { id:'chg',   name:t('acc.chg'),   solo:119, bundle:69,  img:'acc/charger.webp' },
+  { id:'buds',  name:t('acc.buds'),  solo:249, bundle:169, img:'acc/buds.jpg' },
+  { id:'bank',  name:t('acc.bank'),  solo:159, bundle:99,  img:'acc/bank.jpg' }
 ];
+}
+var BUNDLES = bundles();
 
 var BRAND = { Apple:'assets/img/logo/apple.svg', Samsung:'assets/img/logo/samsung.png' };
 var TABBY = 'assets/img/logo/tabby.webp';
@@ -102,7 +108,7 @@ var TABBY = 'assets/img/logo/tabby.webp';
    figure shown is the lowest grade and storage on that model. */
 function inst(price) { return Math.round(price / 4); }
 function tabbyLine(price) {
-  return '<span class="tby__l">From <b>' + money(inst(price)) + '</b> x4 <img class="tby" src="' +
+  return '<span class="tby__l">' + t('price.fromShort') + ' <b>' + money(inst(price)) + '</b> x4 <img class="tby" src="' +
     TABBY + '" alt="Tabby" loading="lazy"></span>';
 }
 
@@ -112,20 +118,27 @@ function priceBlock(p, save, pct) {
   return '<div class="pblk">' +
     '<div class="pblk__top">' +
       '<div class="pblk__from">' +
-        '<span class="pblk__k">Starting from</span>' +
+        '<span class="pblk__k">' + t('price.from') + '</span>' +
         '<span class="pblk__v"><b>' + money(inst(p.price)) + '</b><em>x4</em></span>' +
-        '<span class="pblk__tby">interest free with <img src="' + TABBY + '" alt="Tabby"></span>' +
+        '<span class="pblk__tby">' + t('price.tabby') + ' <img src="' + TABBY + '" alt="Tabby"></span>' +
       '</div>' +
-      '<div class="pblk__save"><span>You save</span><b>' + money(save) + '</b><i>' + pct + '% off</i></div>' +
+      '<div class="pblk__save"><span>' + t('price.save') + '</span><b>' + money(save) + '</b><i>' + t('price.vsNew') + '</i></div>' +
     '</div>' +
-    '<div class="pblk__full"><span>Or pay once</span><b>' + money(p.price) + '</b></div>' +
+    '<div class="pblk__full"><span>' + t('price.once') + '</span><b>' + money(p.price) + '</b></div>' +
   '</div>';
 }
 
-/* Best offers, ranked by how much cash the buyer keeps. */
+/* Hero deals. Ranking on raw dirham saving alone promotes the oldest stock,
+   because an ageing flagship has a high launch price and a low resale value. That
+   is arithmetically true and commercially useless: nobody is drawn in by a five
+   year old handset. Weighting the saving by the asking price keeps the desirable
+   phones at the front while still leading with genuine value. */
 function bestDeals(limit) {
-  return P.map(function (p) { return { p:p, save:p.was - p.price }; })
-    .sort(function (a, b) { return b.save - a.save; })
+  return P.map(function (p) {
+    var save = p.was - p.price;
+    return { p:p, save:save, score:save * (p.price / 1000) };
+  })
+    .sort(function (a, b) { return b.score - a.score; })
     .slice(0, limit || 5);
 }
 
@@ -176,7 +189,7 @@ function log(txt, o) {
   var ul = $('#ipLog'), e = $('.ip__e', ul);
   if (e) e.remove();
   var li = document.createElement('li');
-  li.innerHTML = (o.lead ? '<b>LEAD</b> ' : '') + txt;
+  li.innerHTML = (o.lead ? '<b>' + t('lead.tag') + '</b> ' : '') + txt;
   ul.insertBefore(li, ul.firstChild);
   while (ul.children.length > 24) ul.removeChild(ul.lastChild);
   intent(o.strong ? 3 : 1);
@@ -189,20 +202,59 @@ $('#ipClose').addEventListener('click', function () {
   document.body.classList.remove('insight'); $('#insightPanel').hidden = true;
 });
 function toast(msg) {
-  var t = document.createElement('div');
-  t.className = 'toast';
-  t.innerHTML = '<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-9"/></svg><span>' + msg + '</span>';
-  $('#toasts').appendChild(t);
-  setTimeout(function(){ t.classList.add('out'); setTimeout(function(){ t.remove(); }, 300); }, 3200);
+  var el = document.createElement('div');
+  el.className = 'toast';
+  el.innerHTML = '<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-9"/></svg><span>' + msg + '</span>';
+  $('#toasts').appendChild(el);
+  setTimeout(function(){ el.classList.add('out'); setTimeout(function(){ el.remove(); }, 300); }, 3200);
 }
 
 /* ---------- gift flow ---------- */
 var GIFT = { shown:false, done:false, score:0, lead:null, unlocked:false };
+/* Kept so the existing call sites still work, but the score no longer opens
+   anything on its own. It only records interest for the insight panel. */
 function intent(n) {
   if (GIFT.shown || GIFT.done) return;
   GIFT.score += n;
-  if (GIFT.score >= 3) setTimeout(openGift, 700);
 }
+
+/* The two standing offers. The prompt is the third attempt, not the first. */
+var PASSED = { tin:false, tile:false };
+
+function maybeGift() {
+  if (GIFT.shown || GIFT.done) return;
+  if (TIN_ACTIVE) return;                 /* never cut across a trade in */
+  if (!PASSED.tin || !PASSED.tile) return;
+  setTimeout(function () {
+    if (GIFT.shown || GIFT.done || TIN_ACTIVE) return;
+    openGift();
+  }, 900);                                /* a beat after the tile leaves view */
+}
+
+/* Marks an element as passed once its bottom has gone above the viewport top,
+   which means the visitor scrolled by it rather than merely glimpsing it. */
+function watchPassed(sels, key) {
+  function pick() {
+    for (var i = 0; i < sels.length; i++) {
+      var e = document.querySelector(sels[i]);
+      if (e) return e;
+    }
+    return null;
+  }
+  function check() {
+    if (PASSED[key]) return true;
+    var el = pick();
+    if (!el) return false;
+    var r = el.getBoundingClientRect();
+    if (r.bottom < 0) { PASSED[key] = true; maybeGift(); return true; }
+    return false;
+  }
+  check();
+  addEventListener('scroll', function () { check(); }, { passive:true });
+}
+watchPassed(['#tin2', '#tradein'], 'tin');
+/* the grid is built by JS, so the tile only exists after the first render */
+addEventListener('load', function () { watchPassed(['#gtile', '#shop'], 'tile'); });
 var gf = $('#giftFlow'), gbox = $('#giftBox');
 function openGift() {
   if (GIFT.shown || GIFT.done) return;
@@ -222,24 +274,26 @@ function step1() {
   gbox.innerHTML =
     '<div class="g1"><button class="g1__x" data-g="close" aria-label="Close">&times;</button>' +
     '<div class="g1__i"><svg viewBox="0 0 24 24"><path d="M12 22s8-4.5 8-11a5 5 0 0 0-8-4 5 5 0 0 0-8 4c0 6.5 8 11 8 11z"/></svg></div>' +
-    '<h3>Quick one before you go on</h3><p>Is this your first time shopping with Example Electronics?</p>' +
-    '<div class="g1__b"><button class="g1__yes" data-g="yes">Yes, first time</button>' +
-    '<button class="g1__no" data-g="no">No, I have bought before</button></div></div>';
+    '<h3>' + t('gift.q') + '</h3><p>' + t('gift.qSub') + '</p>' +
+    '<div class="g1__b"><button class="g1__yes" data-g="yes">' + t('gift.yes') + '</button>' +
+    '<button class="g1__no" data-g="no">' + t('gift.no') + '</button></div></div>';
 }
 function step2() {
   gbox.innerHTML =
     '<div class="g2__top"><button class="g2__x" data-g="close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="sback sback--g" data-g="back">' +
+      '<svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>' + t('ui.back') + '</button>' +
     '<i class="spark"></i><i class="spark"></i><i class="spark"></i><i class="spark"></i>' +
     '<div class="gift"><svg viewBox="0 0 24 24"><path d="M3 9h18v12H3z"/><path d="M12 9v12M3 9l2-4h5l2 4 2-4h5l2 4"/></svg></div>' +
-    '<h3>You have a welcome gift</h3>' +
-    '<p>First time customers get something off their first order. Tell us where to send it.</p></div>' +
+    '<h3>' + t('gift.have') + '</h3>' +
+    '<p>' + t('gift.have2') + '</p></div>' +
     '<form class="g2__form" id="giftForm" novalidate>' +
-      '<div class="gfield gfield--treasure" id="fWa"><label for="gWa">WhatsApp number</label>' +
+      '<div class="gfield gfield--treasure" id="fWa"><label for="gWa">' + t('f.wa') + '</label>' +
       '<input id="gWa" type="tel" inputmode="tel" placeholder="05X XXX XXXX" autocomplete="tel"></div>' +
-      '<div class="gfield gfield--slide" id="fName"><label for="gName">Your name</label>' +
-      '<input id="gName" type="text" placeholder="First name" autocomplete="given-name"></div>' +
-      '<button class="gbtn" id="gSend" type="submit" disabled>Send me my gift</button>' +
-      '<p class="gnote">We message you the code on WhatsApp and send occasional stock alerts. Opt out any time by replying STOP.</p>' +
+      '<div class="gfield gfield--slide" id="fName"><label for="gName">' + t('f.name') + '</label>' +
+      '<input id="gName" type="text" placeholder="' + t('f.firstName') + '" autocomplete="given-name"></div>' +
+      '<button class="gbtn" id="gSend" type="submit" disabled>' + t('gift.send') + '</button>' +
+      '<p class="gnote">' + t('gift.note') + '</p>' +
     '</form>';
   var wa = $('#gWa'), nm = $('#gName'), btn = $('#gSend'), fWa = $('#fWa'), fName = $('#fName');
   function refresh() {
@@ -258,6 +312,7 @@ function step2() {
     if (btn.disabled) return;
     GIFT.lead = { phone: wa.value.trim(), name: nm.value.trim() };
     GIFT.unlocked = true;
+    showGiftFab();
     log('New customer lead: <b>' + GIFT.lead.name + '</b> opted in on WhatsApp', { lead:true });
     step3();
   });
@@ -267,12 +322,13 @@ function step3() {
   gbox.innerHTML =
     '<div class="g3"><div class="conf" id="conf"></div>' +
     '<div class="g3__top"><div class="g3__i"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-9"/></svg></div>' +
-    '<h3>Unlocked, ' + GIFT.lead.name + '</h3><p>Your welcome gift is ready to use</p></div>' +
+    '<h3>' + t('gift.unlocked').replace('{n}', GIFT.lead.name) + '</h3><p>' + t('gift.ready') + '</p></div>' +
     '<div class="g3__body"><div class="code"><span class="code__v">' + pr.code + '</span>' +
-    '<button class="code__c" data-g="copy">Copy</button></div>' +
-    '<p class="g3__t"><b>' + plain(pr.off) + ' off</b> your first order over ' + plain(pr.minSpend) +
-    '. Already saved to your checkout, just tap it in the cart.</p>' +
-    '<button class="btn btn--p btn--full" data-g="shop">Start shopping</button></div></div>';
+    '<button class="code__c" data-g="copy">' + t('gift.copy') + '</button></div>' +
+    '<p class="g3__t">' + t('gift.terms')
+      .replace('{n}', '<b>' + plain(pr.off) + '</b>')
+      .replace('{m}', plain(pr.minSpend)) + '</p>' +
+    '<button class="btn btn--p btn--full" data-g="shop">' + t('gift.shop') + '</button></div></div>';
   confetti(); renderCart(); renderGrid();
 }
 function confetti() {
@@ -291,31 +347,41 @@ function stepReturning() {
   gbox.innerHTML =
     '<div class="g1"><button class="g1__x" data-g="close" aria-label="Close">&times;</button>' +
     '<div class="g1__i"><svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="8" r="4"/></svg></div>' +
-    '<h3>Good to have you back</h3>' +
+    '<h3>' + t('gift.back') + '</h3>' +
     '<p>Returning customers get first look at new stock. Want us to message you when something you are watching lands?</p>' +
-    '<div class="g1__b"><button class="g1__yes" data-g="yes">Yes, alert me</button>' +
-    '<button class="g1__no" data-g="close">Not right now</button></div></div>';
+    '<div class="g1__b"><button class="g1__yes" data-g="yes">' + t('gift.alert') + '</button>' +
+    '<button class="g1__no" data-g="close">' + t('gift.later') + '</button></div></div>';
   log('Returning customer identified, offered stock alerts');
 }
 gbox.addEventListener('click', function (e) {
   var b = e.target.closest('[data-g]'); if (!b) return;
   var a = b.dataset.g;
+  if (a === 'back')  { step1(); return; }
   if (a === 'close') { closeGift(true); return; }
   if (a === 'no') { stepReturning(); return; }
   if (a === 'yes') { step2(); return; }
   if (a === 'copy') {
     if (navigator.clipboard) navigator.clipboard.writeText(RULES.promo.code).catch(function(){});
-    b.textContent = 'Copied'; return;
+    b.textContent = t('gift.copied'); return;
   }
   if (a === 'shop') {
+    var wasInTin = TIN_ACTIVE;
     closeGift(true);
     toast('<b>' + RULES.promo.code + '</b> saved to your checkout');
-    var s = $('#shop'); if (s) s.scrollIntoView({ behavior:'smooth' });
+    /* Only carry them to the grid if they were not already partway through
+       something. Scrolling someone out of a flow they chose is worse than
+       leaving them where they were. */
+    if (!wasInTin) { var s = $('#shop'); if (s) s.scrollIntoView({ behavior:'smooth' }); }
   }
 });
 
 /* ---------- state ---------- */
 var cart = [], addons = [], wish = [], shown = 8, filter = 'all', promoOn = false;
+
+/* True from the moment a brand is tapped until the request is sent. The gift
+   prompt checks this: interrupting someone who is already converting, to ask for
+   the same contact details, costs more than it earns. */
+var TIN_ACTIVE = false;
 function byId(id){ return P.filter(function(p){ return p.id === id; })[0]; }
 
 /* ---------- grid ---------- */
@@ -324,8 +390,8 @@ function cardHTML(p) {
   /* One tag only. Scarcity beats a discount badge, and the saving is stated
      in dirhams below the price, so a percentage tag here would just repeat it. */
   var tags = p.tags.indexOf('low') > -1
-    ? '<span class="tg tg--l">Only ' + p.stock + ' left</span>'
-    : (p.tags.indexOf('new') > -1 ? '<span class="tg tg--n">Brand new</span>' : '');
+    ? '<span class="tg tg--l">' + t('card.only').replace('{n}', p.stock) + '</span>'
+    : (p.tags.indexOf('new') > -1 ? '<span class="tg tg--n">' + t('card.new') + '</span>' : '');
   var sw = p.colors.slice(0,6).map(function(c,i){
     return '<button data-i="' + i + '" class="' + (i===0?'on':'') + '" style="--sc:' + c[1] + '" aria-label="' + c[0] + '"></button>';
   }).join('');
@@ -338,10 +404,10 @@ function cardHTML(p) {
     '<div class="cd__hd"><img class="cd__bl" src="' + BRAND[p.brand] + '" alt="' + p.brand + '" loading="lazy">' +
     '<h3 class="cd__n">' + p.name + '</h3></div>' +
     '<div class="cd__sw"><div class="sw">' + sw + '</div><span class="cd__c">' + p.colors[0][0] + '</span></div>' +
-    '<div class="cd__p"><b>' + money(p.price) + '</b><s>' + money(p.was) + '</s></div>' +
-    '<div class="cd__sv">Save ' + plain(save) + ' <em>' + pct + '% off</em></div>' +
+    '<div class="cd__p"><b>' + money(p.price) + '</b><s>' + money(p.was) + ' ' + t('price.newSuffix') + '</s></div>' +
+    '<div class="cd__sv">' + t('cart.saving') + ' ' + plain(save) + ' <em>' + t('price.vsNewLong') + '</em></div>' +
     '<div class="cd__i">' + tabbyLine(p.price) + '</div>' +
-    '<div class="cd__x"><button class="cd__add">Add to cart</button>' +
+    '<div class="cd__x"><button class="cd__add">' + t('card.add') + '</button>' +
     '<button class="cd__q" aria-label="Quick view"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button></div>' +
     '</div></article>';
 }
@@ -357,16 +423,16 @@ function giftTile() {
   if (GIFT.unlocked) {
     return '<article class="cd gtile gtile--done"><div class="gtile__in">' +
       '<div class="gtile__i"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-9"/></svg></div>' +
-      '<h3>' + RULES.promo.code + ' is ready</h3>' +
-      '<p>' + plain(RULES.promo.off) + ' off once your cart passes ' + plain(RULES.promo.minSpend) + '.</p>' +
+      '<h3>' + t('gtile.ready').replace('{c}', RULES.promo.code) + '</h3>' +
+      '<p>' + t('gtile.terms').replace('{n}', plain(RULES.promo.off)).replace('{m}', plain(RULES.promo.minSpend)) + '</p>' +
       '</div></article>';
   }
   return '<article class="cd gtile" id="gtile"><div class="gtile__in">' +
     '<div class="gtile__i"><svg viewBox="0 0 24 24"><path d="M3 9h18v12H3z"/><path d="M12 9v12M3 9l2-4h5l2 4 2-4h5l2 4"/></svg></div>' +
-    '<span class="gtile__tag">First order</span>' +
-    '<h3>' + plain(RULES.promo.off) + ' off your first phone</h3>' +
-    '<p>Takes ten seconds. We send the code to your WhatsApp.</p>' +
-    '<span class="btn btn--g btn--full">Claim my gift</span></div></article>';
+    '<span class="gtile__tag">' + t('gift.first') + '</span>' +
+    '<h3>' + t('gift.head').replace('{n}', plain(RULES.promo.off)) + '</h3>' +
+    '<p>' + t('gift.sub') + '</p>' +
+    '<span class="btn btn--g btn--full">' + t('gift.cta') + '</span></div></article>';
 }
 function renderGrid() {
   var list = visible();
@@ -457,74 +523,74 @@ function totals() {
   return { sub:sub, wasSum:wasSum, discount:discount, total:sub - discount, saved:(wasSum - sub) + discount };
 }
 function renderCart() {
-  var t = totals(), n = cart.length + addons.length;
+  var tt = totals(), n = cart.length + addons.length;
   var cc = $('#cartCount'); cc.textContent = n; cc.classList.toggle('zero', !n);
   var sb = $('#sbar');
   sb.hidden = !n;
   document.body.classList.toggle('has-bar', !!n);
   if (n) {
     $('#sbarN').textContent = n;
-    $('#sbarPrice').innerHTML = plain(t.total);
-    $('#sbarSave').innerHTML = t.saved > 0 ? 'Saving ' + plain(t.saved) : '';
+    $('#sbarPrice').innerHTML = plain(tt.total);
+    $('#sbarSave').innerHTML = tt.saved > 0 ? 'Saving ' + plain(tt.saved) : '';
   }
 
   if (!n) {
     $('#cartBody').innerHTML = '<div class="empty">Your cart is empty.<br>Browse phones to get started.</div>';
-    $('#cartFoot').innerHTML = '<button class="btn btn--o btn--full" data-close>Keep shopping</button>';
+    $('#cartFoot').innerHTML = '<button class="btn btn--o btn--full" data-close>' + t('cart.keep') + '</button>';
     ship(0); return;
   }
   var rows = cart.map(function(i,ix){
     return '<div class="crow"><div class="crow__i"><img src="' + i.img + '" alt="" loading="lazy"></div>' +
-      '<div><b>' + i.name + '</b><i>' + i.color + ' · ' + i.stor + ' · Grade ' + i.cond + '</i>' +
-      '<button class="rm" data-rm="p" data-ix="' + ix + '">Remove</button></div>' +
+      '<div><b>' + i.name + '</b><i>' + i.color + ' · ' + i.stor + ' · ' + t('pdp.grade') + ' ' + i.cond + '</i>' +
+      '<button class="rm" data-rm="p" data-ix="' + ix + '">' + t('cart.remove') + '</button></div>' +
       '<div class="rt"><span>' + money(i.price) + '</span><s>' + money(i.was) + '</s></div></div>';
   }).join('');
   rows += addons.map(function(a,ix){
     return '<div class="crow"><div class="crow__i"><img src="assets/img/' + a.img + '" alt="" loading="lazy"></div>' +
-      '<div><b>' + a.name + '</b><i>Bundle price</i>' +
-      '<button class="rm" data-rm="a" data-ix="' + ix + '">Remove</button></div>' +
+      '<div><b>' + a.name + '</b><i>' + t('cart.bundle') + '</i>' +
+      '<button class="rm" data-rm="a" data-ix="' + ix + '">' + t('cart.remove') + '</button></div>' +
       '<div class="rt"><span>' + money(a.bundle) + '</span><s>' + money(a.solo) + '</s></div></div>';
   }).join('');
 
-  var banner = t.saved >= RULES.savingsBannerMin
+  var banner = tt.saved >= RULES.savingsBannerMin
     ? '<div class="svb"><div class="svb__i"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-9"/></svg></div>' +
-      '<div><b>You are saving ' + plain(t.saved) + '</b><i>Against buying these new</i></div></div>' : '';
+      '<div><b>' + t('cart.saving2').replace('{n}', plain(tt.saved)) + '</b><i>' + t('cart.vsNew') + '</i></div></div>' : '';
 
   var avail = BUNDLES.filter(function(b){ return !addons.some(function(a){ return a.id === b.id; }); }).slice(0,3);
   var bundle = (cart.length && avail.length)
-    ? '<div class="bnd"><div class="bnd__h"><b>Frequently bought together</b><span>Bundle price</span></div>' +
+    ? '<div class="bnd"><div class="bnd__h"><b>' + t('cart.fbt') + '</b><span>' + t('cart.bundle') + '</span></div>' +
       avail.map(function(b){
         return '<div class="bi" data-b="' + b.id + '"><div class="bi__i"><img src="assets/img/' + b.img + '" alt="" loading="lazy"></div>' +
           '<div><b>' + b.name + '</b><div class="pr"><strong>' + money(b.bundle) + '</strong><s>' + money(b.solo) + '</s></div></div>' +
-          '<button class="bi__a">Add</button></div>';
+          '<button class="bi__a">' + t('cart.add') + '</button></div>';
       }).join('') + '</div>' : '';
 
   $('#cartBody').innerHTML = banner + rows + bundle;
 
-  var pr = RULES.promo, eligible = t.sub >= pr.minSpend, chip = '';
+  var pr = RULES.promo, eligible = tt.sub >= pr.minSpend, chip = '';
   if (GIFT.unlocked) {
-    chip = '<div class="pmo"><div class="pmo__h">Your codes</div>' +
+    chip = '<div class="pmo"><div class="pmo__h">' + t('cart.codes') + '</div>' +
       '<button class="pchip' + (promoOn ? ' applied' : '') + '"' + (eligible ? '' : ' disabled') + ' id="promoChip">' +
       '<span class="pchip__c">' + pr.code + '</span>' +
-      '<span><b>' + plain(pr.off) + ' off</b><i>' + (eligible ? 'Ready to apply' : 'Spend ' + plain(pr.minSpend - t.sub) + ' more to unlock') + '</i></span>' +
-      '<span class="pchip__x">' + (promoOn ? 'Applied' : 'Tap to apply') + '</span></button></div>';
+      '<span><b>' + plain(pr.off) + ' off</b><i>' + (eligible ? 'Ready to apply' : 'Spend ' + plain(pr.minSpend - tt.sub) + ' more to unlock') + '</i></span>' +
+      '<span class="pchip__x">' + (promoOn ? t('cart.applied') : t('cart.promo')) + '</span></button></div>';
   }
   $('#cartFoot').innerHTML = chip +
-    (t.discount ? '<div class="tot"><span>Discount</span><b class="disc">- ' + money(t.discount) + '</b></div>' : '') +
-    '<div class="tot"><span>Total</span><div>' +
-      (t.saved > 0 ? '<span class="was">' + plain(t.wasSum) + '</span>' : '') +
-      '<b>' + money(t.total) + '</b></div></div>' +
-    '<button class="btn btn--p btn--l btn--full" id="checkoutBtn">Checkout</button>' +
-    '<div class="pay"><span>Pay with</span>' +
+    (tt.discount ? '<div class="tot"><span>' + t('cart.discount') + '</span><b class="disc">- ' + money(tt.discount) + '</b></div>' : '') +
+    '<div class="tot"><span>' + t('cart.total') + '</span><div>' +
+      (tt.saved > 0 ? '<span class="was">' + plain(tt.wasSum) + '</span>' : '') +
+      '<b>' + money(tt.total) + '</b></div></div>' +
+    '<button class="btn btn--p btn--l btn--full" id="checkoutBtn">' + t('cart.checkout') + '</button>' +
+    '<div class="pay"><span>' + t('cart.payWith') + '</span>' +
       '<img src="assets/img/logo/tabby.webp" alt="Tabby"><img src="assets/img/logo/applepay.webp" alt="Apple Pay">' +
       '<img src="assets/img/logo/visa.webp" alt="Visa"><img src="assets/img/logo/mastercard.svg" alt="Mastercard"></div>';
-  ship(t.total);
+  ship(tt.total);
 }
 function ship(tot) {
   var need = RULES.freeDeliveryOver - tot, bar = $('#shipBar');
   if (!tot) { bar.style.setProperty('--p','0%'); $('#shipTxt').innerHTML = 'Free delivery on orders over ' + plain(RULES.freeDeliveryOver); bar.classList.remove('done'); }
   else if (need > 0) { bar.style.setProperty('--p', (tot/RULES.freeDeliveryOver*100) + '%'); $('#shipTxt').innerHTML = 'Add ' + plain(need) + ' more for free delivery'; bar.classList.remove('done'); }
-  else { bar.style.setProperty('--p','100%'); $('#shipTxt').textContent = 'You qualify for free delivery'; bar.classList.add('done'); }
+  else { bar.style.setProperty('--p','100%'); $('#shipTxt').textContent = t('cart.qualify'); bar.classList.add('done'); }
 }
 $('#cartBody').addEventListener('click', function(e){
   var rm = e.target.closest('[data-rm]');
@@ -549,10 +615,10 @@ $('#cartFoot').addEventListener('click', function(e){
   }
   if (e.target.closest('#checkoutBtn')) {
     closeAll();
-    modal('<h3>Reserve your order</h3><p>Confirm your details and we deliver today. Pay on delivery or online, your choice.</p>' +
+    modal('<h3>' + t('cart.reserve') + '</h3><p>' + t('m.reserve') + '</p>' +
       '<form data-lead="Checkout"><input placeholder="Full name" value="' + (GIFT.lead ? GIFT.lead.name : '') + '" required>' +
       '<input type="tel" placeholder="Mobile number" value="' + (GIFT.lead ? GIFT.lead.phone : '') + '" required>' +
-      '<input placeholder="Delivery area in Dubai" required><button class="btn btn--p" type="submit">Confirm reservation</button></form>');
+      '<input placeholder="Delivery area in Dubai" required><button class="btn btn--p" type="submit">' + t('cart.confirm') + '</button></form>');
   }
 });
 $('#sbar').addEventListener('click', function(){ openSheet('#cartDrawer'); });
@@ -568,27 +634,29 @@ function openPDP(p) {
   function paint() {
     var price = Math.round(p.price * CONDS[sel.cond].m), wasU = Math.round(p.was * CONDS[sel.cond].m);
     $('.pdp__meta', $('#pdpBody')).innerHTML =
-      '<div class="pdp__br"><img src="' + BRAND[p.brand] + '" alt="' + p.brand + '"><span>Certified renewed</span></div>' +
+      '<div class="pdp__br"><img src="' + BRAND[p.brand] + '" alt="' + p.brand + '"><span>' + t('pdp.renewed') + '</span></div>' +
       '<h3>' + p.name + '</h3>' +
       '<div class="pdp__p"><b>' + money(price) + '</b><s>' + money(wasU) + '</s></div>' +
-      '<span class="cd__sv">You save ' + plain(wasU - price) + '</span>' +
+      '<span class="cd__sv">' + t('price.save') + ' ' + plain(wasU - price) + '</span>' +
       '<div class="pdp__tby">' +
-        '<div class="pdp__tby-r"><span>From</span><b>' + money(inst(price)) + '</b><em>x4 interest free</em>' +
+        '<div class="pdp__tby-r"><span>' + t('price.fromShort') + '</span><b>' + money(inst(price)) + '</b><em>x4 ' + t('trust.pay4Sub') + '</em>' +
         '<img class="tby" src="' + TABBY + '" alt="Tabby"></div>' +
-        '<button class="pdp__tby-q" id="tbyHow">How does this work?</button>' +
+        '<button class="pdp__tby-q" id="tbyHow">' + t('pdp.how') + '</button>' +
         '<p class="pdp__tby-x">The full price is ' + money(price) + '. Tabby splits it into four equal ' +
         'payments of ' + money(inst(price)) + ' with no interest and no fees. The "from" price on the ' +
         'home page is the lowest grade and storage of this model.</p></div>' +
-      '<div class="pdp__lb">Colour: <em>' + p.colors[sel.color][0] + '</em></div><div class="pdp__sw">' +
+      '<div class="pdp__lb">' + t('pdp.colour') + ' <em>' + p.colors[sel.color][0] + '</em></div><div class="pdp__sw">' +
       p.colors.map(function(c,i){ return '<button data-k="color" data-i="' + i + '" class="' + (i===sel.color?'on':'') + '" style="--sc:' + c[1] + '" aria-label="' + c[0] + '"></button>'; }).join('') + '</div>' +
-      '<div class="pdp__lb">Storage: <em>' + p.storage[sel.stor] + '</em></div><div class="pdp__o">' +
+      '<div class="pdp__lb">' + t('pdp.storage') + ' <em>' + p.storage[sel.stor] + '</em></div><div class="pdp__o">' +
       p.storage.map(function(s,i){ return '<button data-k="stor" data-i="' + i + '" class="' + (i===sel.stor?'on':'') + '">' + s + '</button>'; }).join('') + '</div>' +
-      '<div class="pdp__lb">Condition: <em>' + CONDS[sel.cond].n + '</em></div><div class="pdp__cn">' +
+      '<div class="pdp__lb">' + t('pdp.condition') + ' <em>' + CONDS[sel.cond].n + '</em></div><div class="pdp__cn">' +
       CONDS.map(function(c,i){ return '<button data-k="cond" data-i="' + i + '" class="' + (i===sel.cond?'on':'') + '">' +
-        '<div><b>Grade ' + c.k + ' · ' + c.n + '</b><i>' + c.d + '</i></div><span>' + money(Math.round(p.price*c.m)) + '</span></button>'; }).join('') + '</div>' +
-      '<div class="pdp__in"><span><b>In the box:</b> phone, cable</span><span><b>Warranty:</b> 12 months</span><span><b>Delivery:</b> today</span></div>' +
+        '<div><b>' + t('pdp.grade') + ' ' + c.k + ' · ' + c.n + '</b><i>' + c.d + '</i></div><span>' + money(Math.round(p.price*c.m)) + '</span></button>'; }).join('') + '</div>' +
+      '<div class="pdp__in"><span><b>' + t('pdp.box') + '</b> ' + t('pdp.boxV') + '</span>' +
+      '<span><b>' + t('pdp.warr') + '</b> ' + t('pdp.warrV') + '</span>' +
+      '<span><b>' + t('pdp.deliv') + '</b> ' + t('pdp.delivV') + '</span></div>' +
       '<div class="pdp__by"><button class="btn btn--p btn--l btn--full" id="pdpAdd">Add to cart · ' + money(price) + '</button>' +
-      '<button class="pdp__al" id="pdpAlert"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 1 1 12 0c0 6 2 7 2 7H4s2-1 2-7z"/><path d="M10 20h4"/></svg>Tell me if this price drops</button></div>';
+      '<button class="pdp__al" id="pdpAlert"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 1 1 12 0c0 6 2 7 2 7H4s2-1 2-7z"/><path d="M10 20h4"/></svg>' + t('pdp.drop') + '</button></div>';
   }
   paint();
   $('#pdpBody').onclick = function(e){
@@ -609,10 +677,9 @@ function openPDP(p) {
   log('Product viewed: <b>' + p.name + '</b>', { strong:true });
 }
 function askAlert(p) {
-  modal('<h3>Watch this price</h3><p>We message you the moment the ' + p.name +
-    ' drops in price or a better grade lands in stock. One message, no spam.</p>' +
-    '<form data-lead="Price alert: ' + p.name + '"><input type="tel" placeholder="WhatsApp number" required>' +
-    '<button class="btn btn--p" type="submit">Watch this price</button></form>');
+  modal('<h3>' + t('pdp.watch') + '</h3><p>' + t('m.watch').replace('{p}', p.name) + '</p>' +
+    '<form data-lead="Price alert: ' + p.name + '"><input type="tel" placeholder="' + t('f.wa') + '" required>' +
+    '<button class="btn btn--p" type="submit">' + t('pdp.watch') + '</button></form>');
 }
 
 /* ---------- sheets ---------- */
@@ -643,9 +710,9 @@ $('#cartBtn').addEventListener('click', function(){ openSheet('#cartDrawer'); })
 $('#wishBtn').addEventListener('click', function(){
   if (!wish.length) { toast('Your wishlist is empty'); return; }
   var names = wish.map(function(id){ return byId(id).name; }).join(', ');
-  modal('<h3>Your wishlist</h3><p>' + names + '</p><p style="margin-top:10px">Want us to hold these and send a bundle price?</p>' +
+  modal('<h3>' + t('wish.title') + '</h3><p>' + names + '</p><p style="margin-top:10px">' + t('m.wish') + '</p>' +
     '<form data-lead="Wishlist bundle quote"><input type="tel" placeholder="WhatsApp number" required>' +
-    '<button class="btn btn--p" type="submit">Send me a bundle price</button></form>');
+    '<button class="btn btn--p" type="submit">' + t('m.wishCta') + '</button></form>');
 });
 function modal(html) {
   var m = $('#modal');
@@ -663,49 +730,11 @@ $('#modalBox').addEventListener('submit', function(e){
     '<button class="btn btn--p btn--full" data-close style="margin-top:16px">Done</button></div>';
 });
 
-/* ---------- trade in ---------- */
-var TIN = [ {n:'iPhone 15 Pro Max',b:2100},{n:'iPhone 15',b:1350},{n:'iPhone 14 Pro',b:1500},
-  {n:'iPhone 13',b:850},{n:'iPhone 12',b:520},{n:'iPhone 11',b:380},
-  {n:'Galaxy S23 Ultra',b:1300},{n:'Galaxy S22',b:700},{n:'Other model',b:400} ];
-var STOR = [['64 GB',.88],['128 GB',1],['256 GB',1.12],['512 GB',1.26]];
-var TCOND = [['Flawless','Like new, no marks',1],['Good','Light scratches',.85],['Worn','Clear scratches or dents',.68],['Damaged','Cracked screen or faulty',.4]];
-var tin = { m:null, s:null, c:null, step:1 };
-$('#tinModels').innerHTML = TIN.map(function(m,i){ return '<button data-i="' + i + '">' + m.n + '</button>'; }).join('');
-$('#tinStorage').innerHTML = STOR.map(function(s,i){ return '<button data-i="' + i + '">' + s[0] + '</button>'; }).join('');
-$('#tinCond').innerHTML = TCOND.map(function(c,i){ return '<button data-i="' + i + '"><span>' + c[0] + '</span><em>' + c[1] + '</em></button>'; }).join('');
-function tinGo(n){ tin.step = n; $$('.tin__s').forEach(function(s){ s.classList.toggle('is-on', +s.dataset.step === n); }); $('#tinBar').style.width = (n*25) + '%'; }
-$('#tinModels').addEventListener('click', function(e){
-  var b = e.target.closest('button'); if (!b) return;
-  tin.m = TIN[+b.dataset.i]; tinGo(2); log('Trade in started: <b>' + tin.m.n + '</b>', { strong:true });
-});
-$('#tinStorage').addEventListener('click', function(e){
-  var b = e.target.closest('button'); if (!b) return; tin.s = STOR[+b.dataset.i]; tinGo(3);
-});
-$('#tinCond').addEventListener('click', function(e){
-  var b = e.target.closest('button'); if (!b) return;
-  tin.c = TCOND[+b.dataset.i];
-  var v = Math.round(tin.m.b * tin.s[1] * tin.c[2] / 10) * 10;
-  $('#tinModelName').textContent = tin.m.n + ' · ' + tin.s[0] + ' · ' + tin.c[0];
-  var out = $('#tinValue'), cur = 0;
-  var t = setInterval(function(){
-    cur += Math.max(10, Math.round(v/22));
-    if (cur >= v) { cur = v; clearInterval(t); }
-    out.textContent = cur.toLocaleString('en-US');
-  }, 28);
-  tinGo(4);
-  log('Trade in valued: <b>' + tin.m.n + '</b> at ' + plain(v), { value:v, strong:true });
-});
-$$('.bk').forEach(function(b){ b.addEventListener('click', function(){ tinGo(tin.step === 4 ? 1 : tin.step - 1); }); });
-$('#tinForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  var name = $('#tinName').value || 'Customer';
-  log('Trade in lead: <b>' + name + '</b> locked ' + tin.m.n + ' quote for 7 days', { lead:true });
-  $('.tin__s[data-step="4"]').innerHTML =
-    '<div class="ok"><div class="ok__i"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-9"/></svg></div>' +
-    '<h3>Price locked for 7 days</h3><p>We sent the quote to your WhatsApp, ' + name +
-    '. Bring the phone in or book a free collection.</p>' +
-    '<button class="btn btn--p btn--full" style="margin-top:16px" onclick="location.reload()">Value another phone</button></div>';
-});
+/* ---------- trade in ----------
+   The four step valuation flow that used to live here is gone. The shop agrees
+   prices on WhatsApp, so the site no longer quotes one. What remains is the two
+   tap starter further down, which captures brand and condition and hands the
+   conversation over. */
 
 /* ---------- finder ---------- */
 var fin = { budget:1500, priority:null, brand:'any' };
@@ -733,9 +762,9 @@ function finRun() {
     if (fin.priority === 'camera' || fin.priority === 'gaming') return !!pro[p.id];
     return true;
   }).sort(function(a,b){ return b.price - a.price; }).slice(0,3);
-  if (!fin.priority) { $('#finOut').innerHTML = '<p class="fin__h">Pick what matters most and we shortlist instantly.</p>'; return; }
+  if (!fin.priority) { $('#finOut').innerHTML = '<p class="fin__h">' + t('fin.h') + '</p>'; return; }
   if (!list.length) {
-    $('#finOut').innerHTML = '<p class="fin__h">Nothing in stock at that budget yet. Raise the budget, or let us message you when something lands.</p>' +
+    $('#finOut').innerHTML = '<p class="fin__h">' + t('fin.none') + '</p>' +
       '<div class="fin__c"><p><b>We will hunt for it.</b> Give us your number and we message you when a match arrives.</p><button class="btn btn--p" id="finLead">Alert me</button></div>';
   } else {
     $('#finOut').innerHTML = '<div class="fin__r">' + list.map(function(p){
@@ -749,7 +778,7 @@ $('#finOut').addEventListener('click', function(e){
   var m = e.target.closest('[data-open]');
   if (m) { openPDP(byId(m.dataset.open)); return; }
   if (e.target.closest('#finLead')) {
-    modal('<h3>Send my shortlist</h3><p>We message the matches to your WhatsApp with live stock and prices, and hold them for 48 hours.</p>' +
+    modal('<h3>' + t('m.shortT') + '</h3><p>' + t('m.shortB') + '</p>' +
       '<form data-lead="Finder shortlist (budget ' + fin.budget + ', wants ' + (fin.priority || 'any') + ')">' +
       '<input placeholder="Your name" required><input type="tel" placeholder="WhatsApp number" required>' +
       '<button class="btn btn--p" type="submit">Send my shortlist</button></form>');
@@ -796,7 +825,7 @@ document.addEventListener('mouseout', function(e){
   exited = true;
   if (!GIFT.shown && !GIFT.done) { openGift(); return; }
   if (GIFT.done && !GIFT.unlocked) {
-    modal('<h3>Before you go</h3><p>Take ' + plain(RULES.promo.off) + ' off your first order over ' + plain(RULES.promo.minSpend) + '. We send the code to your WhatsApp.</p>' +
+    modal('<h3>' + t('m.exitT') + '</h3><p>' + t('m.exitB').replace('{n}', plain(RULES.promo.off)).replace('{m}', plain(RULES.promo.minSpend)) + '</p>' +
       '<form data-lead="Exit intent voucher"><input type="tel" placeholder="WhatsApp number" required>' +
       '<button class="btn btn--p" type="submit">Send me the code</button></form>');
     log('Exit intent triggered: recovery offer shown');
@@ -833,22 +862,31 @@ setInterval(function(){
 }, 1000);
 
 /* ---------- content ---------- */
-var ANNO = ['Free same day delivery across Dubai','12 month warranty on every graded phone',
-  'AED 100 off your first order with <b>WELCOME100</b>','Trade in and pay less','Pay in 4, interest free with Tabby'];
-$('#annoTrack').innerHTML = (ANNO.concat(ANNO)).map(function(s){ return '<span>' + s + '</span><i></i>'; }).join('');
+var ANNO_KEYS = ['anno.1','anno.2','anno.3','anno.4','anno.5'];
+function annoList() { return ANNO_KEYS.map(function (k) { return t(k); }); }
+function paintAnno() {
+  $('#annoTrack').innerHTML = annoList().concat(annoList())
+    .map(function (s) { return '<span>' + s + '</span><i></i>'; }).join('');
+}
+paintAnno();
 
-var REV = [
-  ['Mariam A.','Downtown','Grade B iPhone 13 looked better than described. Delivered in three hours.'],
-  ['Joseph K.','Business Bay','Traded my old 12 Pro. Got the quote on WhatsApp and they honoured it exactly.'],
-  ['Priya S.','Marina','They came to my building so I could check the phone first. No pressure at all.'],
-  ['Hassan R.','Downtown','Battery health was exactly what the listing said. That is rare here.']
-];
-$('#revs').innerHTML = REV.map(function(r){
-  return '<article class="rv"><div class="st">★★★★★</div><p>' + r[2] + '</p>' +
+function revList() {
+  return [
+    ['Mariam A.', t('d.deira'),   t('rev.1')],
+    ['Joseph K.', t('d.quoz'),    t('rev.2')],
+    ['Priya S.',  t('d.marina'),  t('rev.3')],
+    ['Hassan R.', t('d.baraha'),  t('rev.4')]
+  ];
+}
+function paintRevs() {
+  $('#revs').innerHTML = revList().map(function(r){
+  return '<article class="rv"><div class="st" role="img" aria-label="Rated 5 out of 5">★★★★★</div><p>' + r[2] + '</p>' +
     '<div class="rv__w"><div class="av">' + r[0][0] + '</div><div><b>' + r[0] + '</b><i>' + r[1] + '</i></div></div></article>';
 }).join('');
+}
+paintRevs();
 
-var PROOF = [['Ahmed','Downtown','iPhone 13 Pro Max'],['Sara','JVC','iPhone 15'],
+var PROOF = [['Ahmed','Business Bay','iPhone 13 Pro Max'],['Sara','JVC','iPhone 15'],
   ['Rahul','Bur Dubai','Galaxy S23 Ultra'],['Fatima','Mirdif','iPhone 14 Pro'],['Omar','JLT','iPhone 12']];
 var pi = 0;
 setTimeout(function tick(){
@@ -866,17 +904,17 @@ function dealSlide(d, i) {
   var low = p.stock <= 5;
   return '<article class="dsl" data-open="' + p.id + '">' +
     '<div class="dsl__hd">' +
-      '<span class="dsl__bg">' + (i === 0 ? 'Biggest saving today' : 'Deal ' + (i + 1)) + '</span>' +
-      (low ? '<span class="dsl__st">Only ' + p.stock + ' left</span>' : '') +
+      '<span class="dsl__bg">' + (i === 0 ? t('ui.top') : t('ui.deal') + ' ' + (i + 1)) + '</span>' +
+      (low ? '<span class="dsl__st">' + t('card.only').replace('{n}', p.stock) + '</span>' : '') +
       '<img class="dsl__brand" src="' + BRAND[p.brand] + '" alt="' + p.brand + '">' +
     '</div>' +
     '<div class="dsl__im"><img src="' + imgSrc(p, p.colors[0]) + '" alt="' + p.name + '"' +
       (i === 0 ? ' fetchpriority="high"' : ' loading="lazy"') + '></div>' +
     '<div class="dsl__b">' +
       '<h3>' + p.name + '</h3>' +
-      '<p class="dsl__m">Grade A tested &middot; ' + p.storage[0] + ' &middot; ' + p.colors[0][0] + '</p>' +
+      '<p class="dsl__m">' + t('deal.grade') + ' &middot; <bdi>' + p.storage[0] + '</bdi> &middot; <bdi>' + p.colors[0][0] + '</bdi></p>' +
       priceBlock(p, d.save, pct) +
-      '<span class="btn btn--p btn--full">See this deal</span>' +
+      '<span class="btn btn--p btn--full">' + t('deal.cta') + '</span>' +
     '</div></article>';
 }
 function renderDeals() {
@@ -888,7 +926,11 @@ function renderDeals() {
 }
 function goDeal(i, manual) {
   dIdx = (i + DEALS.length) % DEALS.length;
-  $('#dealTrack').style.transform = 'translateX(' + (-dIdx * 100) + '%)';
+  /* In RTL the track sits right to left, so advancing means moving it the other
+     way. Without this the first slide appears to arrive from the wrong side and
+     the sequence reads last to first. */
+  var rtl = document.documentElement.dir === 'rtl';
+  $('#dealTrack').style.transform = 'translateX(' + ((rtl ? 1 : -1) * dIdx * 100) + '%)';
   $$('#dealPg .dpg').forEach(function (b, n) {
     b.classList.toggle('on', n === dIdx);
     b.classList.toggle('done', n < dIdx);
@@ -920,7 +962,10 @@ $('#dealTrack').addEventListener('click', function (e) {
   d.addEventListener('touchend', function (e) {
     if (x0 === null) return;
     var dx = e.changedTouches[0].clientX - x0;
-    if (Math.abs(dx) > 40) goDeal(dIdx + (dx < 0 ? 1 : -1), true); else goDeal(dIdx);
+    if (Math.abs(dx) > 40) {
+      var fwd = document.documentElement.dir === 'rtl' ? dx > 0 : dx < 0;
+      goDeal(dIdx + (fwd ? 1 : -1), true);
+    } else goDeal(dIdx);
     x0 = null;
   });
   d.addEventListener('mouseenter', pauseDeal);
@@ -929,57 +974,156 @@ $('#dealTrack').addEventListener('click', function (e) {
 renderDeals();
 
 /* ================= trade in starter =================
-   Two taps and a figure. No form, no account, nothing to read. The model is
-   captured on tap one, which is the single most useful field, so even an
-   abandon here leaves the business something it can act on. */
+   Brand, then model, then condition, then contact. No price is quoted anywhere:
+   the shop negotiates on WhatsApp, and a figure on screen would either undercut
+   that conversation or have to be walked back inside it.
+
+   The model step is ranges rather than exact handsets. "iPhone 14 series" covers
+   the Pro, the Pro Max and the Plus in one tap, which keeps a list that would
+   otherwise run to forty entries down to six. The exact variant is a question
+   the team can ask in the first WhatsApp message, and they have to message
+   anyway.
+
+   "Other brand" skips the model step. Asking which model, when we do not know
+   the make, is a tap that earns nothing.
+
+   Every step past the first has a back control. Misreading a logo and being
+   trapped is the fastest way to lose someone who was already half committed. */
 (function () {
-  var STEP1 = [
-    { n:'iPhone 14 or newer', b:1500 }, { n:'iPhone 12 or 13', b:850 },
-    { n:'iPhone 11 or older', b:380 },  { n:'Samsung Galaxy', b:700 },
-    { n:'Something else', b:400, wide:true }
+  var BRANDS = [
+    { k:'apple',   n:'Apple' },
+    { k:'samsung', n:'Samsung' },
+    { k:'xiaomi',  n:'Xiaomi' },
+    { k:'huawei',  n:'Huawei' },
+    { k:'other',   n:'Other brand', wide:true }
   ];
-  var STEP2 = [
-    { n:'Looks new', m:1 }, { n:'A few scratches', m:.82 }, { n:'Cracked or faulty', m:.45 }
-  ];
-  var pick = null;
-  var opts = $('#tin2Opts'), lbl = $('#tin2Lbl'), step = $('#tin2Step'), hint = $('#tin2Hint');
+  /* model ranges per brand, widest first. Keys, so they translate. */
+  var MODELS = {
+    apple:   ['m.ip16','m.ip15','m.ip14','m.ip13','m.ip12','m.ipOld'],
+    samsung: ['m.s25','m.s23','m.s21','m.sA','m.sFold','m.other'],
+    xiaomi:  ['m.mi15','m.mi13','m.rNote','m.redmi','m.poco','m.other'],
+    huawei:  ['m.hP','m.hMate','m.hNova','m.hY','m.other']
+  };
+  var CONDS2 = ['cond.0','cond.1','cond.2'];
 
-  /* the exchange photo is a static asset, nothing to populate here */
+  var brand = null, model = null, step = 1;
+  var opts = $('#tin2Opts'), head = $('#tin2Head'), lbl = $('#tin2Lbl'),
+      stepEl = $('#tin2Step'), hint = $('#tin2Hint');
 
-  function paint(list) {
-    opts.innerHTML = list.map(function (o, i) {
-      return '<button data-i="' + i + '"' + (o.wide ? ' class="wide"' : '') + '>' + o.n + '</button>';
-    }).join('');
+  function steps() { return brand && brand.k === 'other' ? 2 : 3; }
+  function backBtn() {
+    return '<button type="button" class="sback" id="tinBack">' +
+      '<svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>' + t('ui.back') + '</button>';
   }
-  paint(STEP1);
+  function chosenChip() {
+    if (!brand || brand.k === 'other') return '';
+    return '<span class="tin2__chosen" data-b="' + brand.k + '"><i aria-hidden="true"></i>' + brand.n + '</span>';
+  }
 
-  opts.addEventListener('click', function (e) {
-    var b = e.target.closest('button'); if (!b) return;
-    var i = +b.dataset.i;
-    if (!pick) {
-      pick = STEP1[i];
-      log('Trade in starter: owns <b>' + pick.n + '</b>', { strong:true });
-      lbl.textContent = 'What condition is it in?';
-      step.textContent = 'Step 2 of 2';
-      hint.textContent = 'Last one, then you get a number';
-      paint(STEP2);
+  function paint() {
+    var hd = '';
+    if (step > 1) hd += backBtn();
+    if (step === 3) hd += chosenChip();
+    head.innerHTML = hd;
+
+    if (step === 1) {
+      opts.className = 'tin2__opts tin2__opts--brand';
+      opts.innerHTML = BRANDS.map(function (o, i) {
+        var inner = o.k === 'other'
+          ? '<span class="bt__t">' + t('brand.other') + '</span>'
+          : '<i class="bt__m"></i>';
+        return '<button class="bt' + (o.wide ? ' wide' : '') + '" data-i="' + i +
+          '" data-b="' + o.k + '" aria-label="' + o.n + '">' + inner + '</button>';
+      }).join('');
+      lbl.innerHTML = t('tin.q1');
+      stepEl.textContent = t('tin.stepN').replace('{a}', 1).replace('{b}', 3);
+      hint.textContent = t('tin.hint1');
+    } else if (step === 2) {
+      var list = MODELS[brand.k] || [];
+      opts.className = 'tin2__opts tin2__opts--model';
+      opts.innerHTML = list.map(function (k, i) {
+        var wide = (i === list.length - 1) && (list.length % 2 === 1);
+        return '<button class="' + (wide ? 'wide' : '') + '" data-i="' + i + '">' + t(k) + '</button>';
+      }).join('');
+      lbl.innerHTML = t('tin.q2model');
+      stepEl.textContent = t('tin.stepN').replace('{a}', 2).replace('{b}', steps());
+      hint.textContent = t('tin.hint2model');
+    } else {
+      opts.className = 'tin2__opts';
+      opts.innerHTML = CONDS2.map(function (k, i) {
+        return '<button data-i="' + i + '">' + t(k) + '</button>';
+      }).join('');
+      lbl.innerHTML = t('tin.q2');
+      stepEl.textContent = t('tin.stepN').replace('{a}', steps()).replace('{b}', steps());
+      hint.textContent = t('tin.hint2');
+    }
+  }
+  paint();
+
+  /* A language switch mid flow would leave half the panel in the old language,
+     so the starter resets rather than translating in place. */
+  onLangChange(function () {
+    if (!$('#tin2Opts')) { return; }
+    brand = null; model = null; step = 1;
+    paint();
+  });
+
+  head.addEventListener('click', onTap);
+  opts.addEventListener('click', onTap);
+  function onTap(e) {
+    if (e.target.closest('#tinBack')) {
+      step = (step === 3 && brand && brand.k === 'other') ? 1 : step - 1;
+      if (step < 1) step = 1;
+      if (step === 1) { brand = null; model = null; TIN_ACTIVE = false; }
+      if (step === 2) model = null;
+      paint();
       return;
     }
-    var v = Math.round(pick.b * STEP2[i].m / 10) * 10;
-    log('Trade in valued at ' + plain(v) + ' from the hero starter', { value:v, strong:true });
+    var b = e.target.closest('button'); if (!b || !b.dataset.i) return;
+    var i = +b.dataset.i;
+
+    if (step === 1) {
+      brand = BRANDS[i];
+      TIN_ACTIVE = true;
+      log(t('log.tinBrand').replace('{b}', '<b>' + brand.n + '</b>'), { strong:true });
+      step = brand.k === 'other' ? 3 : 2;
+      paint();
+      return;
+    }
+    if (step === 2) {
+      model = t((MODELS[brand.k] || [])[i] || 'm.other');
+      log(t('log.tinModel').replace('{m}', '<b>' + model + '</b>'), { strong:true });
+      step = 3;
+      paint();
+      return;
+    }
+
+    var cond = t(CONDS2[i]);
+    var summary = '<bdi>' + brand.n + '</bdi>' + (model ? ' &middot; <bdi>' + model + '</bdi>' : '') +
+      ' &middot; ' + cond.toLowerCase();
+    log(t('log.tinDone').replace('{b}', brand.n).replace('{c}', cond.toLowerCase()), { strong:true });
     $('.tin2__q').innerHTML =
-      '<div class="tin2__res"><span>Your phone is worth about</span>' +
-      '<b>' + money(v) + '</b><i>' + pick.n + ', ' + STEP2[i].n.toLowerCase() + '</i></div>' +
-      '<button class="btn btn--p btn--full" id="tin2Lock" style="margin-top:10px">Lock this price for 7 days</button>' +
-      '<p class="tin2__step" style="justify-content:center"><span>We send it to your WhatsApp. No account needed.</span></p>';
-  });
+      '<div class="tin2__next">' +
+        '<span class="tin2__nk">' + t('tin.nextTitle') + '</span>' +
+        '<ol class="tin2__steps">' +
+          '<li>' + t('tin.next1') + '</li>' +
+          '<li>' + t('tin.next2') + '</li>' +
+          '<li>' + t('tin.next3') + '</li>' +
+        '</ol>' +
+        '<p class="tin2__sum">' + summary + '</p>' +
+      '</div>' +
+      '<button class="btn btn--p btn--full" id="tin2Lock" style="margin-top:10px">' + t('tin.cta') + '</button>' +
+      '<p class="tin2__step" style="justify-content:center"><span>' + t('tin.hours') + '</span></p>';
+    TIN_ACTIVE = false;   /* request is ready, the gift prompt may fire again */
+  }
 
   $('#tin2').addEventListener('click', function (e) {
     if (!e.target.closest('#tin2Lock')) return;
-    modal('<h3>Lock your price</h3><p>We hold this valuation for seven days and send it straight to your WhatsApp.</p>' +
-      '<form data-lead="Trade in quote from the hero starter"><input placeholder="Your name" required>' +
-      '<input type="tel" placeholder="WhatsApp number" required>' +
-      '<button class="btn btn--p" type="submit">Lock it in</button></form>');
+    modal('<h3>' + t('tin.mTitle') + '</h3><p>' + t('tin.mBody') + '</p>' +
+      '<form data-lead="Trade in request from the hero starter"><input placeholder="' + t('f.name') + '" required>' +
+      '<input type="tel" placeholder="' + t('f.wa') + '" required>' +
+      '<button class="btn btn--p" type="submit">' + t('tin.mCta') + '</button></form>' +
+      '<p class="fine">' + t('tin.mFine') + '</p>');
   });
 })();
 
@@ -991,11 +1135,13 @@ renderDeals();
     return '<button class="ochip" data-open="' + p.id + '">' +
       '<div class="ochip__im"><img src="' + imgSrc(p, p.colors[0]) + '" alt="" loading="lazy"></div>' +
       '<div><b>' + p.name + '</b>' +
-      '<span class="ochip__f">From ' + money(inst(p.price)) + ' <em>x4</em></span>' +
-      '<span class="ochip__s">Save ' + money(d.save) + '</span></div></button>';
+      '<span class="ochip__f">' + t('price.fromShort') + ' ' + money(inst(p.price)) + ' <em>x4</em></span>' +
+      '<span class="ochip__s">' + t('ui.save') + ' ' + money(d.save) + '</span></div></button>';
   }
   /* duplicated once so the marquee loops seamlessly */
-  $('#offerTrack').innerHTML = list.concat(list).map(chip).join('');
+  function paintRail() { $('#offerTrack').innerHTML = list.concat(list).map(chip).join(''); }
+  paintRail();
+  onLangChange(paintRail);
   $('#offerTrack').addEventListener('click', function (e) {
     var b = e.target.closest('[data-open]'); if (!b) return;
     var p = byId(b.dataset.open);
@@ -1019,4 +1165,88 @@ $$('.nav__in a').forEach(function(a){
 $('#yr').textContent = new Date().getFullYear();
 
 renderGrid(); renderCart();
+
+/* ---------- language ----------
+   Everything above is inside this module closure, so the redraw has to be
+   registered from in here. Static markup is handled by applyI18n in i18n.js. */
+onLangChange(function () {
+  CONDS = conds();
+  BUNDLES = bundles();
+  renderGrid();
+  renderDeals();
+  renderCart();
+  paintAnno();
+  paintRevs();
+  finRun();
+  goDeal(dIdx);   /* direction may have flipped, recompute the track offset */
+});
+
+/* ================= standing gift reminder =================
+   Once the code is claimed it is easy to forget it exists until checkout, which
+   is exactly when it stops influencing the decision. A small glowing chip keeps
+   it in view the whole way round. */
+function showGiftFab() {
+  var f = $('#gfab');
+  if (!f) return;
+  $('#gfabAmt').innerHTML = t('gfab.off').replace('{n}', plain(RULES.promo.off));
+  $('#gfabSub').textContent = RULES.promo.code;
+  f.hidden = false;
+}
+if ($('#gfab')) {
+  $('#gfab').addEventListener('click', function () {
+    if (navigator.clipboard) navigator.clipboard.writeText(RULES.promo.code).catch(function () {});
+    toast(t('gfab.toast').replace('{c}', '<b>' + RULES.promo.code + '</b>')
+      .replace('{m}', plain(RULES.promo.minSpend)));
+    log('Tapped the standing gift reminder');
+  });
+}
+onLangChange(function () { if (GIFT.unlocked) showGiftFab(); });
+
+/* ================= welcome language chooser ================= */
+(function () {
+  var pop = $('#wpop');
+  if (!pop) return;
+  var CHOSEN = 'tdr-lang-chosen';
+  var already = false;
+  try { already = !!localStorage.getItem(CHOSEN); } catch (e) {}
+
+  function paint() {
+    $('#wpopT').textContent = t('wel.title');
+    $('#wpopP').textContent = t('wel.sub');
+    $('#wpopG').innerHTML = LANGS.map(function (l) {
+      return '<button type="button" data-w="' + l.code + '">' +
+        '<img class="lgf" src="assets/img/flag/' + l.code + '.png" alt="" width="26" height="18">' +
+        '<b>' + l.name + '</b></button>';
+    }).join('');
+  }
+  function close() {
+    pop.hidden = true;
+    document.body.style.overflow = '';
+    try { localStorage.setItem(CHOSEN, '1'); } catch (e) {}
+  }
+  pop.addEventListener('click', function (e) {
+    if (e.target.closest('#wpopX') || e.target.classList.contains('wpop__s')) { close(); return; }
+    var b = e.target.closest('[data-w]');
+    if (!b) return;
+    var code = b.getAttribute('data-w');
+    setLang(code);
+    log('Chose ' + code.toUpperCase() + ' from the welcome prompt');
+    close();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !pop.hidden) close(); });
+
+  /* if the language is changed from the header while this is open, keep it in step */
+  onLangChange(function () { if (!pop.hidden) paint(); });
+
+  /* A beat, not instantly. Long enough to read the headline and see a phone,
+     short enough that nobody has started tapping. */
+  if (!already) setTimeout(function () {
+    if (!pop.hidden) return;
+    if (TIN_ACTIVE || (GIFT.shown && !GIFT.done)) return;  /* never stack prompts */
+    paint();
+    pop.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }, 2800);
+})();
+
 })();
