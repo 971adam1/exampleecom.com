@@ -1206,7 +1206,7 @@ onLangChange(function () { if (GIFT.unlocked) showGiftFab(); });
 (function () {
   var pop = $('#wpop');
   if (!pop) return;
-  var CHOSEN = 'tdr-lang-chosen';
+  var CHOSEN = 'shop-lang-chosen';
   var already = false;
   try { already = !!localStorage.getItem(CHOSEN); } catch (e) {}
 

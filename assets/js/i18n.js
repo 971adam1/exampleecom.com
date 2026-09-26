@@ -1157,7 +1157,7 @@ for (var _gtl in I18N_GT) for (var _gtk in I18N_GT[_gtl]) I18N[_gtl][_gtk] = I18
 /* ------------------------------------------------------------------ runtime */
 
 var LANG = 'en';
-try { LANG = localStorage.getItem('tdr-lang') || 'en'; } catch (e) {}
+try { LANG = localStorage.getItem('shop-lang') || 'en'; } catch (e) {}
 if (!I18N[LANG]) LANG = 'en';
 
 function t(k) {
@@ -1192,7 +1192,7 @@ function onLangChange(fn) { I18N_HOOKS.push(fn); }
 function setLang(code) {
   if (!I18N[code]) return;
   LANG = code;
-  try { localStorage.setItem('tdr-lang', code); } catch (e) {}
+  try { localStorage.setItem('shop-lang', code); } catch (e) {}
   var d = document.documentElement;
   d.setAttribute('lang', code);
   d.setAttribute('dir', langDir(code));
@@ -1249,7 +1249,7 @@ function setLang(code) {
     var b = e.target.closest('[data-lang-opt]');
     if (!b) return;
     setLang(b.getAttribute('data-lang-opt'));
-    try { localStorage.setItem('tdr-lang-chosen', '1'); } catch (e) {}
+    try { localStorage.setItem('shop-lang-chosen', '1'); } catch (e) {}
     now.textContent = SHORT[LANG];
     paintTrigger();
     close();
